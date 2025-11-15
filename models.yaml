@@ -1,0 +1,235 @@
+# 车型配置文件
+# 包含9款车型及其竞品关系、别名、关键词
+
+car_models:
+  # 艾力绅组
+  - name: "艾力绅"
+    brand: "东风本田"
+    category: "MPV"
+    is_own: true  # 本品车型
+    aliases:
+      - "艾力绅"
+      - "ELYSION"
+      - "东风本田艾力绅"
+    keywords:
+      - "艾力绅"
+      - "ELYSION"
+    competitors:
+      - "别克GL8"
+      - "广汽丰田赛那"
+      - "广汽本田奥德赛"
+
+  - name: "别克GL8"
+    brand: "别克"
+    category: "MPV"
+    is_own: false
+    aliases:
+      - "GL8"
+      - "别克GL8"
+      - "别克商务车"
+    keywords:
+      - "GL8"
+      - "别克GL8"
+    related_to: "艾力绅"
+
+  - name: "广汽丰田赛那"
+    brand: "广汽丰田"
+    category: "MPV"
+    is_own: false
+    aliases:
+      - "赛那"
+      - "Sienna"
+      - "丰田赛那"
+      - "广汽丰田赛那"
+    keywords:
+      - "赛那"
+      - "Sienna"
+    related_to: "艾力绅"
+
+  - name: "广汽本田奥德赛"
+    brand: "广汽本田"
+    category: "MPV"
+    is_own: false
+    aliases:
+      - "奥德赛"
+      - "ODYSSEY"
+      - "广汽本田奥德赛"
+    keywords:
+      - "奥德赛"
+      - "ODYSSEY"
+    related_to: "艾力绅"
+
+  # HR-V组
+  - name: "HR-V"
+    brand: "东风本田"
+    category: "SUV"
+    is_own: true
+    aliases:
+      - "HR-V"
+      - "HRV"
+      - "东风本田HR-V"
+      - "缤智"  # HR-V在中国的另一个名称
+    keywords:
+      - "HR-V"
+      - "HRV"
+      - "缤智"
+    competitors:
+      - "丰田锋兰达"
+      - "日产逍客"
+      - "广汽本田缤智"
+
+  - name: "丰田锋兰达"
+    brand: "丰田"
+    category: "SUV"
+    is_own: false
+    aliases:
+      - "锋兰达"
+      - "Frontlander"
+      - "丰田锋兰达"
+    keywords:
+      - "锋兰达"
+      - "Frontlander"
+    related_to: "HR-V"
+
+  - name: "日产逍客"
+    brand: "日产"
+    category: "SUV"
+    is_own: false
+    aliases:
+      - "逍客"
+      - "Qashqai"
+      - "日产逍客"
+    keywords:
+      - "逍客"
+      - "Qashqai"
+    related_to: "HR-V"
+
+  - name: "广汽本田缤智"
+    brand: "广汽本田"
+    category: "SUV"
+    is_own: false
+    aliases:
+      - "缤智"
+      - "Vezel"
+      - "广汽本田缤智"
+    keywords:
+      - "缤智"
+      - "Vezel"
+    related_to: "HR-V"
+
+  # Inspire组
+  - name: "Inspire"
+    brand: "东风本田"
+    category: "轿车"
+    is_own: true
+    aliases:
+      - "Inspire"
+      - "英诗派"
+      - "东风本田Inspire"
+      - "东风本田英诗派"
+    keywords:
+      - "Inspire"
+      - "英诗派"
+    competitors:
+      - "广汽丰田凯美瑞"
+      - "日产天籁"
+      - "广汽本田雅阁"
+    # 特殊黑名单：防止误抓相机、耳机等电子产品
+    special_blacklist:
+      - "相机"
+      - "耳机"
+      - "音响"
+      - "DJI"
+      - "大疆"
+
+  - name: "广汽丰田凯美瑞"
+    brand: "广汽丰田"
+    category: "轿车"
+    is_own: false
+    aliases:
+      - "凯美瑞"
+      - "Camry"
+      - "丰田凯美瑞"
+      - "广汽丰田凯美瑞"
+    keywords:
+      - "凯美瑞"
+      - "Camry"
+    related_to: "Inspire"
+
+  - name: "日产天籁"
+    brand: "日产"
+    category: "轿车"
+    is_own: false
+    aliases:
+      - "天籁"
+      - "Teana"
+      - "日产天籁"
+    keywords:
+      - "天籁"
+      - "Teana"
+    related_to: "Inspire"
+
+  - name: "广汽本田雅阁"
+    brand: "广汽本田"
+    category: "轿车"
+    is_own: false
+    aliases:
+      - "雅阁"
+      - "Accord"
+      - "广汽本田雅阁"
+    keywords:
+      - "雅阁"
+      - "Accord"
+    related_to: "Inspire"
+
+# 通用黑名单（所有车型适用）
+global_blacklist:
+  - "二手车"
+  - "二手"
+  - "转让"
+  - "出售"
+  - "求购"
+  - "降价"
+  - "优惠"
+  - "团购"
+  - "经销商"
+  - "4S店"
+  - "改装"
+  - "配件"
+  - "保养"
+  - "维修"
+  - "保险"
+  - "贷款"
+  - "金融"
+  - "租车"
+  - "网约车"
+  - "滴滴"
+  - "曹操"
+
+# 汽车领域白名单关键词（必须包含至少一个）
+automotive_keywords:
+  - "汽车"
+  - "SUV"
+  - "MPV"
+  - "轿车"
+  - "试驾"
+  - "评测"
+  - "上市"
+  - "发布"
+  - "改款"
+  - "新车"
+  - "销量"
+  - "口碑"
+  - "车主"
+  - "动力"
+  - "油耗"
+  - "空间"
+  - "配置"
+  - "安全"
+  - "舒适"
+  - "操控"
+  - "对比"
+  - "横评"
+  - "选车"
+  - "购车"
+  - "提车"

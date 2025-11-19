@@ -1,5 +1,5 @@
 """工具函数模块"""
-from . import logger
+from .logger import logger, setup_logger
 from .cache import DedupCache
 
-__all__ = ['logger', 'DedupCache']
+__all__ = ['logger', 'setup_logger', 'DedupCache']
